@@ -3,8 +3,31 @@
     padding:0;
     box-sizing:border-box;
 }
+body{
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display:none
+}
+.window{
+    margin: 20px 0;
+}
+
 .clearfix::after{
     content:'';
     display:block;
-    both:clear;
+    clear: both;
 }
+
+#bgvid{
+    position: fixed; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto; z-index: -100;
+    display: none;
+}
+
+#paper {
+    color: #1daeb3;
+   }
+
