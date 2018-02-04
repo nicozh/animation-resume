@@ -8,26 +8,25 @@ var result = `
 *{  
     transition: all 1s;
 }
-body{
-    font-size:20px;
-}
-
-.page{
-    height:90vh;
-    box-shadow: 0 0 3px black;
-    float:left;
-    margin:20px;
-    overflow: scroll;
-}
 
 /*来张背景*/
 
 #bgvid{
     display: block;
 }
-#code{
-    width:35%;
+body{
+    font-size:20px;
+}
+.page{
+    box-shadow: 0 0 3px black;
+    overflow: scroll;
+    height:90vh;
     padding:20px;
+    margin:20px; 
+}
+#code{
+    float:left;
+    width:35%;
 }
 
 /* 我需要再准备一个页面书写简历 */
@@ -35,11 +34,11 @@ body{
 
 var resultTwo = `
 #paper{
-    width:59%;   
-    padding:20px 20px 20px 30px;
+    width:55%; 
+    float:right;  
 }
 
-/ *接下来开始写简历,请看右边 */
+/* 接下来开始写简历,请看右边 */
 `
 
 var md = `
@@ -79,14 +78,11 @@ var html = `
 /* 将markdown转成HTML,添加点样式 */
 `
 var mdCss = `
-a {
+a{
     text-decoration: none;
 }
 a:hover {
     font-weight:bold;
-}
-img{
-    width:240px;
 }
 
 /* 简历制作完成，谢谢观看 */
@@ -121,7 +117,7 @@ function writeMarkdown(md, fn) {
             window.clearInterval(id)
             fn()
         }
-    }, 23)
+    }, 25)
 }
 
 function toHtml() {
@@ -155,10 +151,10 @@ function fn() {
 writeCode('', result, () => {
     fn()
     writeCode(result, resultTwo, () => {
-        console.log(1); writeMarkdown(md, () => {
+        writeMarkdown(md, () => {
             writeCode(result + resultTwo, html, () => {
                 toHtml()
-                writeCode(result + resultTwo + html, mdCss)
+                writeCode(result + resultTwo + html, mdCss, () => { })
             })
         })
     })

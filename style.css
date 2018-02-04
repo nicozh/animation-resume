@@ -29,5 +29,8 @@ body{
 
 #paper {
     color: #1daeb3;
-   }
+}
 
+img{
+    width:240px;
+}
