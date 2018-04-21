@@ -74,15 +74,15 @@ pre[class*="language-"] {
 	color: slategray;
 }
 
-.token.punctuation {
+/* .token.punctuation {
 	color: #999;
-}
+} */
 
 .namespace {
 	opacity: .7;
 }
 
-.token.property,
+/* .token.property, */
 .token.tag,
 .token.boolean,
 .token.number,
@@ -92,7 +92,7 @@ pre[class*="language-"] {
 	color: #905;
 }
 
-.token.selector,
+/* .token.selector, */
 .token.attr-name,
 .token.string,
 .token.char,

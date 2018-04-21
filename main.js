@@ -2,31 +2,38 @@ var result = `
 /*
 *  面试官你好，我是张洪
 *  接下来我会边写代码边进行自我介绍
-*  首先我要给页面加一些样式
+*  先做点准备工作
 */
 
+/* 来点过渡效果*/
 *{  
     transition: all 1s;
 }
 
-/*来张背景*/
-
-#bgvid{
-    display: block;
-}
+/* 来张背景 */
 body{
-    font-size:20px;
+    background:#DCE0C0;    
 }
+
+/* 给页面添加点样式 */
 .page{
-    box-shadow: 0 0 3px black;
-    overflow: scroll;
-    height:90vh;
-    padding:20px;
+    overflow: scroll;    
     margin:20px; 
+    padding:20px;    
+    border:1px solid #999 ;     
+    box-shadow: 0 0 3px black;
+    animation: 2s linear 0s infinite alternate change;
 }
-#code{
-    float:left;
-    width:35%;
+
+/* 添加代码高亮 */
+.token.selector{
+	color: #690;    
+}
+.token.property{
+	color: #905;    
+}
+.token.punctuation {
+	color: blue;
 }
 
 /* 我需要再准备一个页面书写简历 */
@@ -34,11 +41,9 @@ body{
 
 var resultTwo = `
 #paper{
-    width:55%; 
-    float:right;  
+    transform: rotate(1turn)
 }
-
-/* 接下来开始写简历,请看右边 */
+/* 好了,我要开始写简历了 */
 `
 
 var md = `
@@ -54,8 +59,8 @@ var md = `
 ## 技能清单
 ----
 
-- Web开发：HTML5/CSS3/JavaScript
-- 前端框架：/jQuery/vuejs 
+- Web开发：HTML5/CSS3/JavaScript/JSON/Ajax/Promise
+- 前端框架：jQuery/vue.js 
 
 ## 个人作品
 ----
@@ -63,7 +68,9 @@ var md = `
 - [个人简历](//gogoing.me/resume/index.html)
 - [canvas画板](//gogoing.me/canvas-drawing/index.html)
 - [网站导航](//gogoing.me/nav-page/second-edition)
-- [轮播](//gogoing.me/subentry/carousel-3/index.html)
+- [Vue简历编辑器](//gogoing.me/resume-editor/src)
+- [网易云音乐](//gogoing.me/cloud-music)
+- [CSS佩奇](//gogoing.me/peppa-pig)
 
 ## 联系方式
 ----
@@ -75,7 +82,7 @@ var md = `
 
 `
 var html = `
-/* 将markdown转成HTML,添加点样式 */
+/* 接下来将markdown转成HTML,添加点样式 */
 `
 var mdCss = `
 a{
@@ -101,7 +108,7 @@ function writeCode(codefix, code, fn) {
             window.clearInterval(id)
             fn()
         }
-    }, 30)
+    }, 45)
 
 }
 
@@ -117,7 +124,7 @@ function writeMarkdown(md, fn) {
             window.clearInterval(id)
             fn()
         }
-    }, 25)
+    }, 45)
 }
 
 function toHtml() {
